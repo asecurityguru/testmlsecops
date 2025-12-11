@@ -12,7 +12,7 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     # SAST - Static Application Security Testing
     - name: Run Bandit (Python SAST)
@@ -36,7 +36,7 @@ jobs:
         safety check || true
 
     - name: Upload Safety Report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: safety-report
@@ -50,7 +50,7 @@ jobs:
         pip-audit -r requirements.txt || true
 
     - name: Upload pip-audit Report
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: pip-audit-report
@@ -58,7 +58,7 @@ jobs:
 
     # Optional: Semgrep for advanced SAST
     - name: Run Semgrep
-      uses: returntocorp/semgrep-action@v1
+      uses: returntocorp/semgrep-action@v4
       with:
         config: >-
           p/security-audit
