@@ -58,7 +58,7 @@ jobs:
 
     # Optional: Semgrep for advanced SAST
     - name: Run Semgrep
-      uses: returntocorp/semgrep-action@v4
+      uses: returntocorp/semgrep-action@v2
       with:
         config: >-
           p/security-audit
